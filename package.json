@@ -1,0 +1,11 @@
+{
+  "name": "claude-code-session-monitor",
+  "version": "1.0.0",
+  "description": "Real-time web UI for monitoring multiple Claude Code sessions — split-panel terminal view with SSE streaming",
+  "main": "monitor.js",
+  "bin": "./monitor.js",
+  "license": "Apache-2.0",
+  "scripts": {
+    "start": "node monitor.js"
+  }
+}

@@ -1,0 +1,34 @@
+[
+  {
+    "id": "agent-a",
+    "label": "⚡ Agent-A",
+    "color": "#58a6ff",
+    "type": "tmux",
+    "target": "claude:0",
+    "termUrl": "http://localhost:7681"
+  },
+  {
+    "id": "agent-b",
+    "label": "⚡ Agent-B",
+    "color": "#e3b341",
+    "type": "tmux",
+    "target": "claude:agent-b"
+  },
+  {
+    "id": "cron",
+    "label": "⏰ Cron Runner",
+    "color": "#3fb950",
+    "type": "logfile",
+    "file": "/path/to/cron-runner.log"
+  },
+  {
+    "id": "staging",
+    "label": "🔬 Staging",
+    "color": "#ffa657",
+    "type": "remote-tmux",
+    "container": "claude-code-staging",
+    "target": "claude:0",
+    "sshHost": "root@192.168.1.100",
+    "sshKey": "/home/user/.ssh/id_rsa"
+  }
+]
