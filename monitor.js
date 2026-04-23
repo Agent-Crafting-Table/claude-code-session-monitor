@@ -57,7 +57,10 @@ let clients = [];
 // ── Source readers ────────────────────────────────────────────────────────────
 function trimTrailingBlankLines(raw) {
   if (!raw) return raw;
-  return raw.replace(/(\s*\n)+$/, "\n");
+  // Strip trailing whitespace-only lines. Avoid nested-quantifier ReDoS
+  // (the old /(\s*\n)+$/ on whitespace-heavy tmux captures caused catastrophic
+  // backtracking — see Agent-Crafting-Table/claude-code-session-monitor#1).
+  return raw.replace(/\s+$/, "") + "\n";
 }
 
 function readTmux(target) {
